@@ -27,7 +27,7 @@ export function ProblemSection() {
         <PromoBadge>{promoText}</PromoBadge>
         <h2 className="text-3xl md:text-4xl font-medium leading-tight text-white mb-10 max-w-4xl mx-auto mt-10">
           If you struggle to focus, feel overwhelmed <br /> by end
-          <span className="!text-gray-600">
+          <span className="text-gray-600">
             less tasks, or procrastinate instead <br /> of making progress,
             you're not alone.
           </span>

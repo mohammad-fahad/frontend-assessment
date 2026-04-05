@@ -59,15 +59,13 @@ export function TimelineSection() {
               className="relative flex items-start group pb-20 last:pb-0"
             >
               <div className="absolute left-0 top-0 h-full flex flex-col items-center">
-               
                 <div className="relative z-10 w-4 h-4 rounded-full bg-blue-500 border-4 border-black shadow-[0_0_15px_rgba(59,130,246,0.8)]" />
 
-               
                 <div
                   className="w-[2px] h-full"
                   style={{
                     background: "#2563eb",
-                    
+
                     maskImage:
                       "linear-gradient(to bottom, transparent 0%, black 45%, black 55%, transparent 100%)",
                     WebkitMaskImage:
@@ -76,9 +74,7 @@ export function TimelineSection() {
                 />
               </div>
 
-          
               <div className=" ps-12 flex flex-col items-start justify-start">
-               
                 <div className="mb-2">
                   <div className="w-42 h-42 flex items-center justify-center rounded-full ">
                     <Image
@@ -86,7 +82,7 @@ export function TimelineSection() {
                       alt="Icon"
                       width={120}
                       height={94}
-                      className="opacity-90 group-hover:opacity-100 transition-opacity"
+                      className="opacity-90group-hover:opacity-100 transition-opacity"
                     />
                   </div>
                 </div>

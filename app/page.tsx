@@ -1,10 +1,11 @@
 import Hero from "@/components/sections/Hero";
-import Features from "@/components/sections/Features";
-import Footer from "@/components/sections/Footer";
+
 import Navbar from "@/components/sections/Navbar";
 import { ProblemSection } from "@/components/sections/ProblemSection";
 import { TimelineSection } from "@/components/sections/TimelineSection";
 import { CurriculumSection } from "@/components/sections/CurriculumSecion";
+import { PricingSection } from "@/components/sections/PricingSection";
+import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <ProblemSection />
       <TimelineSection />
       <CurriculumSection />
+      <PricingSection />
       <Footer />
     </>
   );
