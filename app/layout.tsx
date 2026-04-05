@@ -18,7 +18,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html
       lang="en"
       className={`inter_78870104-module__pWJ_4W__variable ${inter.variable} scroll-smooth`}
-      suppressHydrationWarning={true}
+      suppressHydrationWarning
     >
       <body className="font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
