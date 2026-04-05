@@ -1,0 +1,122 @@
+import Image from "next/image";
+import Container from "../ui/Container";
+import { PromoBadge } from "../ui/PromoBadge";
+
+export function ProblemSection() {
+    const promoText = (
+      <>
+        <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+        <span className="pl-2  text-gray-300 font-thin ">
+          Are Distractions Holding You Back?
+        </span>
+      </>
+    );
+
+    const problemText2 = (
+      <>
+        <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+        <span className="pl-2  text-gray-300 font-thin ">
+         No Worries
+        </span>
+      </>
+    );
+
+  return (
+    <section className="py-24 bg-black text-center">
+      <Container>
+        <PromoBadge>{promoText}</PromoBadge>
+        <h2 className="text-3xl md:text-4xl font-medium leading-tight text-white mb-10 max-w-4xl mx-auto mt-10">
+          If you struggle to focus, feel overwhelmed <br /> by end
+          <span className="!text-gray-600">
+            less tasks, or procrastinate instead <br /> of making progress,
+            you're not alone.
+          </span>
+        </h2>
+
+        {/* Avatars Row */}
+        <div className="flex justify-center space-x-4">
+          {[1, 2, 3].map((i) => (
+            <div key={i} className=" overflow-hidden bg-gray-800 ">
+              <img
+                src={`/assets/avatar${i}.png`}
+                alt="user"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-[0.4fr_0.6fr] gap-2 p-3 md:p-6 rounded-[40px] items-stretch mt-32">
+          {/* 1. Left Side: Large Image (Now 30%) */}
+          <div className="relative aspect-auto lg:aspect-auto min-h-[80vh] rounded-[32px] overflow-hidden">
+            <Image
+              src="/assets/problem-image.png"
+              alt="Man working on laptop"
+              fill
+                 sizes="100%"
+              className="object-top object-cover shadow-lg"
+              priority
+            />
+          </div>
+
+          {/* 2. Right Side: Content Area (Now 70%) */}
+          <div className="relative flex flex-col justify-between p-6 md:p-10 lg:p-12 bg-[#080B12] rounded-[32px] border border-white/5 overflow-hidden">
+            {/* Top Row: Badge & Avatars */}
+            <div className="flex flex-col sm:flex-row items-start justify-between gap-6 w-full mb-20">
+              <PromoBadge>{problemText2}</PromoBadge>
+
+              <div className="flex flex-col items-start sm:items-end gap-2">
+                <div className="flex -space-x-3">
+                  {[1, 2, 3].map((i) => (
+                    <div
+                      key={i}
+                      className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#0B0F17] overflow-hidden bg-zinc-800"
+                    >
+                      <img
+                        src={`/assets/small-avatar${i}.png`}
+                        alt="student"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  ))}
+                </div>
+                <p className="text-xs md:text-sm text-zinc-500 font-medium">
+                  Join with 5K other students
+                </p>
+              </div>
+            </div>
+
+            {/* Middle/Bottom Text */}
+            <div className="max-w-md mt-auto text-start">
+              <p className="text-lg md:text-xl text-zinc-500 mb-6 leading-relaxed font-light">
+                The ability to concentrate <br className="hidden md:block" />{" "}
+                deeply is the ultimate <br className="hidden md:block" />{" "}
+                productivity hack.
+              </p>
+              <h2 className="text-2xl md:text-4xl font-medium text-white leading-tight">
+                And fortunately it's <br className="hidden md:block" /> a skill
+                you can train <br className="hidden md:block" /> & develop.
+              </h2>
+            </div>
+
+            {/* Right Floating Thumbnails */}
+            <div className="absolute bottom-10 right-10 hidden xl:flex flex-col gap-3">
+              {[1, 2, 3].map((i) => (
+                <div
+                  key={i}
+                  className="w-20 h-24 rounded-2xl overflow-hidden border border-white/10 cursor-pointer"
+                >
+                  <img
+                    src={`/assets/problem-right${i}.png`}
+                    alt="preview"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Container>
+    </section>
+  );
+}
