@@ -4,6 +4,7 @@ import Footer from "@/components/sections/Footer";
 import Navbar from "@/components/sections/Navbar";
 import { ProblemSection } from "@/components/sections/ProblemSection";
 import { TimelineSection } from "@/components/sections/TimelineSection";
+import { CurriculumSection } from "@/components/sections/CurriculumSecion";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <ProblemSection />
       <TimelineSection />
+      <CurriculumSection />
       <Footer />
     </>
   );

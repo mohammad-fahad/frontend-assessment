@@ -9,7 +9,6 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full py-4 border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-black/80 backdrop-blur-md">
       <Container>
         <div className="flex items-center justify-between">
-          {/* LOGO */}
           <div className="flex items-center gap-2">
             <Image
               src="/assets/logo.png"
@@ -20,7 +19,6 @@ export default function Navbar() {
             />
           </div>
 
-          {/* NAV LINKS */}
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
             <a
               href="#"
@@ -49,12 +47,28 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-6">
-            {/* Theme Toggle */}
             <ThemeToggle />
 
-            <Button variant="primary" className="hidden sm:flex">
+            <Button variant="primary" className="hidden md:flex">
               Enroll now
             </Button>
+
+            <div className="md:hidden cursor-pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-6 h-6 text-gray-600 dark:text-gray-400"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"
+                />
+              </svg>
+            </div>
           </div>
         </div>
       </Container>

@@ -26,6 +26,7 @@ export default function Button({
         variant === "dark"
           ? "bg-[#171B21] text-white border border-[#2A2F37] hover:bg-[#1f242c]"
           : "",
+        className as string,
       )}
       {...props}
     >
