@@ -57,14 +57,11 @@ export function CurriculumSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-28">
-          {/* Left: Modules */}
           <div className="lg:col-span-2 space-y-3">
             {modules.map((m) => (
               <div key={m.id} className=" rounded-[24px] overflow-hidden ">
                 <div className="flex justify-between items-center p-6 cursor-pointer">
                   <div className="flex items-center gap-4">
-                    {/* <span className="text-blue-500 font-mono text-sm bg-blue-500/10 px-3 py-1 rounded-full border border-blue-500/20"></span> */}
-
                     <div>
                       <h3 className="text-white font-medium text-lg">
                         Module {m.id} {m.title}
@@ -98,7 +95,7 @@ export function CurriculumSection() {
                             <Image
                               className={`w-6 h-6 text-blue-500 items-stretch ${i === 0 ? "opacity-100" : "opacity-30"}`}
                               priority
-                              src="/assets/Play-button.png"
+                              src="/assets/Play-Button.png"
                               alt="play button"
                               height={10}
                               width={10}
