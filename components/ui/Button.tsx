@@ -10,7 +10,6 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 export default function Button({
   children,
   variant = "primary",
-  className, 
   ...props
 }: ButtonProps) {
   return (
@@ -26,7 +25,6 @@ export default function Button({
         variant === "dark"
           ? "bg-[#171B21] text-white border border-[#2A2F37] hover:bg-[#1f242c]"
           : "",
-        className,
       )}
       {...props}
     >
