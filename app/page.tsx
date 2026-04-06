@@ -16,8 +16,8 @@ export default function Home() {
       <ProblemSection />
       <TimelineSection />
       <CurriculumSection />
-      <PricingSection />
       <TestimonialSection />
+      <PricingSection />
       <Footer />
     </>
   );

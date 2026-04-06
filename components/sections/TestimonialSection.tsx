@@ -77,7 +77,7 @@ export default function TestimonialSection() {
         </div>
         <div className="flex justify-between items-end mb-16">
           <div className="space-y-6">
-            <p className="text-zinc-300 text-xl md:text-2xl font-light leading-relaxed">
+            <p className="text-zinc-300 text-xl md:text-3xl font-semibold leading-relaxed">
               Join with 5K other students
             </p>
           </div>
