@@ -1,9 +1,11 @@
+"use client";
 import Image from "next/image";
 import Button from "../ui/Button";
 import { PromoBadge } from "../ui/PromoBadge";
 import Container from "../ui/Container";
 import FadeUp from "../ui/FadeUp";
 import { H1, SubText } from "../ui/Typography";
+import { motion } from "framer-motion";
 
 export default function Hero() {
   const promoText = (
@@ -24,10 +26,10 @@ export default function Hero() {
           </div>
 
           <FadeUp>
-            {" "}
             <div className="text-center max-w-[850px] mx-auto mb-8">
               <H1>
-                Master Focus & Get <br /> More Done in Less Time
+                Master Focus & Get <br className="hidden md:flex" /> More Done
+                in Less Time
               </H1>
             </div>
           </FadeUp>
@@ -36,7 +38,7 @@ export default function Hero() {
             <SubText>
               A step-by-step system to eliminate procrastination, train your
               brain
-              <br />
+              <br className="hidden md:flex" />
               for deep work, and boost productivity effortlessly.
             </SubText>
           </FadeUp>
@@ -51,7 +53,12 @@ export default function Hero() {
             </div>
           </FadeUp>
 
-          <div className="relative aspect-video w-full max-w-[90vw] md:max-w-[70vw]  mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_100px_rgba(37,99,235,0.3)] bg-black/40 my-10 md:my-10">
+          <motion.div
+            className="relative aspect-video w-full max-w-[90vw] md:max-w-[70vw]  mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_100px_rgba(37,99,235,0.3)] bg-black/40 my-10 md:my-10"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+          >
             <Image
               src="/assets/hero-video.png"
               fill
@@ -59,13 +66,12 @@ export default function Hero() {
               className="object-cover opacity-90"
               priority
             />
-
             <div className="absolute inset-0 flex items-center justify-center bg-black/10">
-              <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(255,255,255,0.2)] cursor-pointer hover:scale-110 transition-transform duration-300">
+              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(255,255,255,0.2)] cursor-pointer hover:scale-110 transition-transform duration-300">
                 <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-blue-600 border-b-[10px] border-b-transparent ml-1" />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>
