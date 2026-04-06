@@ -16,6 +16,7 @@ export default function Navbar() {
               width={84}
               height={31}
               className="dark:invert-0 invert"
+              priority
             />
           </div>
 
