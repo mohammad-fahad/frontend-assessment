@@ -14,7 +14,7 @@ export default function Hero() {
     </span>
   );
   return (
-    <section className="hero-pro-container min-h-screen flex flex-col items-center justify-start py-20 md:py-28  overflow-hidden ">
+    <section className="hero-pro-container min-h-screen flex flex-col items-center justify-start py-20 md:py-28  overflow-hidden opacity-100">
       <Container>
         <div className="hero-glow-mesh" />
         <div className="hero-top-fade" />
@@ -52,29 +52,28 @@ export default function Hero() {
               </Button>
             </div>
           </FadeUp>
-
-          <motion.div
-            className="relative aspect-video w-full max-w-[90vw] !md:max-w-[70vw]  mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_100px_rgba(37,99,235,0.3)] bg-black/40 my-10 md:my-10"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
-          >
-            <Image
-              src="/assets/hero-video.png"
-              fill
-              sizes="100%"
-              alt="Hero Video Preview"
-              className="object-cover opacity-90"
-              priority
-            />
-            <div className="absolute inset-0 flex items-center justify-center bg-black/10">
-              <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(255,255,255,0.2)] cursor-pointer hover:scale-110 transition-transform duration-300">
-                <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-blue-600 border-b-[10px] border-b-transparent ml-1" />
-              </div>
-            </div>
-          </motion.div>
         </div>
       </Container>
+      <motion.div
+        className="relative z-20 aspect-video w-full max-w-[90vw] md:max-w-[70vw]  mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_100px_rgba(37,99,235,0.3)] bg-black/40 my-10 md:my-10"
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
+      >
+        <Image
+          src="/assets/hero-video.png"
+          fill
+          sizes="100%"
+          alt="Hero Video Preview"
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 flex items-center justify-center bg-black/10">
+          <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(255,255,255,0.2)] cursor-pointer hover:scale-110 transition-transform duration-300">
+            <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[18px] border-l-blue-600 border-b-[10px] border-b-transparent ml-1" />
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 }
