@@ -15,7 +15,7 @@ export function PricingSection() {
     },
   ];
   return (
-    <section className="py-24 bg-black">
+    <section className="py-16 bg-black">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-8 items-stretch">
           {/* Left Card: Course Blueprint */}

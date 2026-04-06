@@ -3,7 +3,7 @@ import Container from "../ui/Container";
 
 export function Footer() {
   return (
-    <footer className="pt-24 pb-12 bg-black border-t border-white/5">
+    <footer className="pt-16 pb-10 bg-black border-t border-white/5">
       <Container>
         <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-20">
           {/* Logo & Info */}

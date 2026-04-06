@@ -67,7 +67,7 @@ export default function TestimonialSection() {
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   return (
-    <section className="bg-black text-white py-24 overflow-hidden">
+    <section className="bg-black text-white py-16 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
         <div className="mx-atuo text-center mb-12">
           <PromoBadge>Testimonials</PromoBadge>

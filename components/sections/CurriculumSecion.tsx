@@ -46,7 +46,7 @@ export function CurriculumSection() {
   ];
 
   return (
-    <section className="py-24 bg-black">
+    <section className="py-16 bg-black">
       <Container>
         <div className="flex flex-col items-center text-center mb-16">
           <PromoBadge>Course Curriculum</PromoBadge>

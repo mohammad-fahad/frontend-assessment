@@ -43,7 +43,7 @@ const steps = [
 
 export function TimelineSection() {
   return (
-    <section className="py-24 bg-black">
+    <section className="py-16 bg-black">
       <Container>
         <div className="text-center mb-32">
           <div className="py-16">
@@ -56,11 +56,11 @@ export function TimelineSection() {
           </h1>
         </div>
 
-        <div className="relative max-w-xs mx-auto py-16">
+        <div className="relative max-w-xs mx-auto pb-16">
           {steps.map((step, idx) => (
             <div
               key={idx}
-              className="relative flex items-start group pb-20 last:pb-0"
+              className="relative flex items-start group pb-16 last:pb-0"
             >
               <div className="absolute left-0 top-0 h-full flex flex-col items-center">
                 <div className="relative z-10 w-4 h-4 rounded-full bg-blue-500 border-4 border-black shadow-[0_0_15px_rgba(59,130,246,0.8)]" />
@@ -78,21 +78,21 @@ export function TimelineSection() {
                 />
               </div>
 
-              <div className=" ps-12 flex flex-col items-start justify-start">
-                <div className="mb-2">
-                  <div className="w-42 h-42 flex items-center justify-center rounded-full ">
+              <div className=" ps-10 flex flex-col items-start justify-start">
+                <div className="">
+                  <div className="w-35 h-25 flex items-center justify-start rounded-full -ms-6">
                     <Image
                       src={step.icon}
                       alt="Icon"
-                      width={94}
-                      height={94}
+                      width={120}
+                      height={120}
                       loading="lazy"
                       className="opacity-90group-hover:opacity-100 transition-opacity dark:invert-0 invert group-hover:invert-0"
                     />
                   </div>
                 </div>
 
-                <div className="text-gray-300 text-[15px] leading-snug font-inter">
+                <div className="text-gray-300 text-lg leading-snug font-inter">
                   {step.desc}
                 </div>
               </div>

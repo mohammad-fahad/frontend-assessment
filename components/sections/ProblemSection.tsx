@@ -21,7 +21,7 @@ export function ProblemSection() {
   );
 
   return (
-    <section className="py-24 bg-black text-center">
+    <section className="py-16 bg-black text-center">
       <Container>
         <div className="mt-6">
           <PromoBadge>{promoText}</PromoBadge>
@@ -50,7 +50,7 @@ export function ProblemSection() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[0.4fr_0.6fr] gap-2 p-3 md:p-6 rounded-[40px] items-stretch mt-32">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.4fr_0.6fr] gap-2 p-3 md:p-6 rounded-[40px] items-stretch mt-20">
           <div className="relative hidden md:flex aspect-auto lg:aspect-auto min-h-[80vh] rounded-[32px] overflow-hidden">
             <Image
               src="/assets/problem-image.png"
@@ -73,10 +73,13 @@ export function ProblemSection() {
                       key={i}
                       className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#0B0F17] overflow-hidden bg-zinc-800"
                     >
-                      <img
+                      <Image
                         src={`/assets/small-avatar${i}.png`}
                         alt="student"
                         className="w-full h-full object-cover"
+                        width={40}
+                        height={40}
+                        loading="lazy"
                       />
                     </div>
                   ))}
@@ -89,12 +92,12 @@ export function ProblemSection() {
 
             <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-end min-h-[400px] md:h-[36vh] w-full">
               <div className="max-w-md text-start">
-                <p className="text-lg md:text-xl text-zinc-500 mb-4 md:mb-6 leading-relaxed font-light">
+                <p className="text-lg md:text-xl text-zinc-400 mb-6 md:mb-12 leading-relaxed font-light">
                   The ability to concentrate <br className="hidden md:block" />
                   deeply is the ultimate <br className="hidden md:block" />
                   productivity hack.
                 </p>
-                <h1 className="text-2xl md:text-4xl font-normal text-white leading-tight">
+                <h1 className="text-2xl md:text-4xl  text-white leading-tight">
                   And fortunately it's <br className="hidden md:block" /> a
                   skill you can train <br className="hidden md:block" /> &
                   develop.
@@ -107,10 +110,13 @@ export function ProblemSection() {
                     key={i}
                     className="w-16 h-20 md:w-20 md:h-24 rounded-2xl overflow-hidden border border-white/10 cursor-pointer hover:border-blue-500 transition-colors"
                   >
-                    <img
+                    <Image
                       src={`/assets/problem-right${i}.png`}
                       alt="preview"
                       className="w-full h-full object-cover"
+                      width={80}
+                      height={100}
+                      loading="lazy"
                     />
                   </div>
                 ))}
