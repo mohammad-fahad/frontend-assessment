@@ -57,7 +57,7 @@ export function ProblemSection() {
               alt="Man working on laptop"
               width={800}
               height={600}
-              className="object-top object-cover  "
+              className="object-top object-cover  hover:scale-110 transform-gpu duration-700"
               loading="lazy"
             />
           </div>

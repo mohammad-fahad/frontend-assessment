@@ -121,7 +121,6 @@ export function CurriculumSection() {
                   </div>
                 )}
 
-                {/* Bottom Divider Fix: Only between modules, not after last */}
                 {i !== modules.length - 1 && (
                   <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
                 )}
@@ -148,9 +147,10 @@ export function CurriculumSection() {
                     <Image
                       src="/assets/done-icon.png"
                       alt="Check"
-                      width={24}
-                      height={24}
-                      className="shrink-0 invert opacity-80"
+                      width={65}
+                      height={65}
+                      className="shrink-0 dark:invert-0 invert"
+                      loading="lazy"
                     />
                     {item}
                   </li>
