@@ -4,16 +4,12 @@ import { PromoBadge } from "../ui/PromoBadge";
 
 export default function Hero() {
   const promoText = (
-    <>
-      <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
-
-      <span className="pl-2  text-gray-300 font-thin">
-        30% off until 4d : 2h : 41m : 17s
-      </span>
-    </>
+    <span className="pl-2  text-gray-300 font-thin">
+      30% off until 4d : 2h : 41m : 17s
+    </span>
   );
   return (
-    <section className="hero-pro-container min-h-screen flex flex-col items-center justify-start pt-32 pb-24  overflow-hidden">
+    <section className="hero-pro-container min-h-screen flex flex-col items-center justify-start py-20 md:py-28  overflow-hidden">
       <div className="hero-glow-mesh" />
       <div className="hero-top-fade" />
       <div className="hero-scanlines" />
@@ -36,7 +32,7 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="flex justify-center items-center mx-auto gap-4 mb-16">
+        <div className="flex justify-center items-center mx-auto gap-6 py-8 md:py-10">
           <Button>Enroll now</Button>
 
           <Button variant="dark" className="border-white/10">
@@ -44,7 +40,7 @@ export default function Hero() {
           </Button>
         </div>
 
-        <div className="relative aspect-video w-full max-w-[90vw] md:max-w-[70vw]  mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_100px_rgba(37,99,235,0.3)] bg-black/40">
+        <div className="relative aspect-video w-full max-w-[90vw] md:max-w-[70vw]  mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_100px_rgba(37,99,235,0.3)] bg-black/40 my-10 md:my-10">
           <Image
             src="/assets/hero-video.png"
             fill

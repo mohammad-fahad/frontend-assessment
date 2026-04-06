@@ -82,6 +82,7 @@ export function TimelineSection() {
                       alt="Icon"
                       width={120}
                       height={94}
+                      loading="lazy"
                       className="opacity-90group-hover:opacity-100 transition-opacity"
                     />
                   </div>
