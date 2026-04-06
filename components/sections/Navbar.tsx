@@ -73,7 +73,7 @@ export default function Navbar() {
           </div>
         </div>
       </Container>
-      <div className="absolute top-16 md:top-20 left-0 right-0 h-1/22  bg-gradient-to-r from-transparent via-blue-500 to-transparent z-10" />
+      <div className="absolute bottom-0 left-0 right-0 h-[1px] w-full bg-gradient-to-r from-transparent via-blue-500/60 to-transparent" />
     </header>
   );
 }

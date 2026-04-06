@@ -72,9 +72,15 @@ export function CurriculumSection() {
                     </small>
                   </div>
                   {m.id === 1 ? (
-                    <ChevronUp className="text-white/40 w-5 h-5" />
+                    <ChevronUp
+                      className="text-white w-8 h-12"
+                      fill="currentColor"
+                    />
                   ) : (
-                    <ChevronDown className="text-white/40 w-5 h-5" />
+                    <ChevronDown
+                      className="text-white w-8 h-12"
+                      fill="currentColor"
+                    />
                   )}
                 </div>
 
@@ -83,7 +89,7 @@ export function CurriculumSection() {
                   <div className="px-6 pb-6 space-y-2">
                     {m.lessons.map((lesson, idx) => (
                       <div key={idx}>
-                        <div className="h-[1px] w-full mb-2 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+                        <div className="h-[1px] w-full mb-2 bg-gradient-to-r from-transparent via-blue-500/60 to-transparent" />
                         <div
                           className="flex items-center justify-between p-4 rounded-xl transition-all cursor-pointer"
                           onMouseEnter={() => setHilightedModule(idx)}
@@ -105,7 +111,7 @@ export function CurriculumSection() {
                           </div>
                           <div className="flex items-center gap-4">
                             {lesson.preview && (
-                              <span className="text-[10px] uppercase font-bold text-blue-400 border border-blue-500/30 px-2 py-0.5 rounded-full">
+                              <span className="text-[10px] uppercase font-bold text-blue-400 border border-blue-500/60 px-2 py-0.5 rounded-full">
                                 Preview
                               </span>
                             )}
@@ -122,7 +128,7 @@ export function CurriculumSection() {
                 )}
 
                 {i !== modules.length - 1 && (
-                  <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
+                  <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-blue-500/60 to-transparent" />
                 )}
               </div>
             ))}

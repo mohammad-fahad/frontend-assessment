@@ -8,7 +8,7 @@ export function H1({ children }: { children: React.ReactNode }) {
 
 export function SubText({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-[16px] md:text-[18px] leading-[1.6] text-muted text-gray-300">
+    <p className="text-[16px] text-center md:text-[18px] leading-[1.6] text-muted text-gray-300">
       {children}
     </p>
   );
