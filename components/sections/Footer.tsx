@@ -8,9 +8,9 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-end gap-12 mb-20">
           {/* Logo & Info */}
           <div>
-            <h3 className="text-white text-3xl font-medium mb-2">
-              The Deep <br /> Work Blueprint
-            </h3>
+            <h1 className="text-white text-2xl md:text-5xl font-normal mb-2">
+              The Deep <br className="hidden md:block" /> Work Blueprint
+            </h1>
             <p className="text-gray-600 text-sm">
               Master Focus & Get More Done In Less Time.
             </p>

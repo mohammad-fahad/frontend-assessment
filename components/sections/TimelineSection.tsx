@@ -7,7 +7,8 @@ const steps = [
     icon: "/assets/focus-icon.png",
     desc: (
       <>
-        Develop laser-sharp focus & <br /> eliminate distractions.
+        Develop laser-sharp focus & <br className="hidden md:block" /> eliminate
+        distractions.
       </>
     ),
   },
@@ -15,7 +16,8 @@ const steps = [
     icon: "/assets/productivity-icon.png",
     desc: (
       <>
-        Master deep work techniques <br /> for smarter productivity.
+        Master deep work techniques <br className="hidden md:block" /> for
+        smarter productivity.
       </>
     ),
   },
@@ -23,7 +25,8 @@ const steps = [
     icon: "/assets/done-icon.png",
     desc: (
       <>
-        Overcome procrastination & <br /> get more done.
+        Overcome procrastination & <br className="hidden md:block" /> get more
+        done.
       </>
     ),
   },
@@ -31,7 +34,8 @@ const steps = [
     icon: "/assets/success-icon.png",
     desc: (
       <>
-        Build lasting habits for long- <br /> term success.
+        Build lasting habits for long- <br className="hidden md:block" /> term
+        success.
       </>
     ),
   },
@@ -42,17 +46,17 @@ export function TimelineSection() {
     <section className="py-24 bg-black">
       <Container>
         <div className="text-center mb-32">
-          <div className="my-10">
+          <div className="py-16">
             <PromoBadge>
               <p>The Deep Work Blueprint</p>
             </PromoBadge>
           </div>
-          <h2 className="text-3xl font-medium text-white">
+          <h1 className="text-2xl md:text-5xl py-16 font-normal text-white">
             A self-paced, results-driven <br /> course designed to help you
-          </h2>
+          </h1>
         </div>
 
-        <div className="relative max-w-xs mx-auto py-10">
+        <div className="relative max-w-xs mx-auto py-16">
           {steps.map((step, idx) => (
             <div
               key={idx}
@@ -80,10 +84,10 @@ export function TimelineSection() {
                     <Image
                       src={step.icon}
                       alt="Icon"
-                      width={120}
+                      width={94}
                       height={94}
                       loading="lazy"
-                      className="opacity-90group-hover:opacity-100 transition-opacity"
+                      className="opacity-90group-hover:opacity-100 transition-opacity dark:invert-0 invert group-hover:invert-0"
                     />
                   </div>
                 </div>

@@ -14,7 +14,7 @@ export default function Hero() {
     </span>
   );
   return (
-    <section className="hero-pro-container min-h-screen flex flex-col items-center justify-start py-20 md:py-28  overflow-hidden">
+    <section className="hero-pro-container min-h-screen flex flex-col items-center justify-start py-20 md:py-28  overflow-hidden ">
       <Container>
         <div className="hero-glow-mesh" />
         <div className="hero-top-fade" />
@@ -26,7 +26,7 @@ export default function Hero() {
           </div>
 
           <FadeUp>
-            <div className="text-center max-w-[850px] mx-auto mb-8">
+            <div className="text-center w-full mx-auto pt-16 pb-6">
               <H1>
                 Master Focus & Get <br className="hidden md:flex" /> More Done
                 in Less Time
@@ -54,7 +54,7 @@ export default function Hero() {
           </FadeUp>
 
           <motion.div
-            className="relative aspect-video w-full max-w-[90vw] md:max-w-[70vw]  mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_100px_rgba(37,99,235,0.3)] bg-black/40 my-10 md:my-10"
+            className="relative aspect-video w-full max-w-[90vw] !md:max-w-[70vw]  mx-auto rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_100px_rgba(37,99,235,0.3)] bg-black/40 my-10 md:my-10"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.8 }}
@@ -62,6 +62,7 @@ export default function Hero() {
             <Image
               src="/assets/hero-video.png"
               fill
+              sizes="100%"
               alt="Hero Video Preview"
               className="object-cover opacity-90"
               priority

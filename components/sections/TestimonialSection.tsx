@@ -68,17 +68,16 @@ export default function TestimonialSection() {
 
   return (
     <section className="bg-black text-white py-24 overflow-hidden">
-      {/* 1. Standard Centered Container for Header and Nav */}
       <div className="max-w-[1280px] mx-auto px-6 lg:px-10">
         <div className="mx-atuo text-center mb-12">
           <PromoBadge>Testimonials</PromoBadge>
-          <h2 className="text-5xl md:text-7xl font-medium tracking-tight leading-tight">
-            Real Results from <br /> Real People
-          </h2>
+          <h1 className="text-2xl md:text-5xl font-normal tracking-tight leading-tight py-16">
+            Real Results from <br className="hidden md:block" /> Real People
+          </h1>
         </div>
         <div className="flex justify-between items-end mb-16">
           <div className="space-y-6">
-            <p className="text-zinc-300 text-2xl">
+            <p className="text-zinc-300 text-xl md:text-2xl font-light leading-relaxed">
               Join with 5K other students
             </p>
           </div>
@@ -117,8 +116,8 @@ export default function TestimonialSection() {
                         src={item.avatar}
                         className="w-12 h-12 rounded-full border border-white/10 mb-8"
                         alt="avatar"
-                            width={48}
-                            height={48}
+                        width={48}
+                        height={48}
                         loading="lazy"
                       />
                       {item.type === "text" && (
@@ -136,7 +135,8 @@ export default function TestimonialSection() {
                           className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700"
                           alt="Thumbnail"
                           loading="lazy"
-                         fill
+                          width={420}
+                          height={240}
                         />
                         <div className="absolute inset-0 flex items-center justify-center z-30">
                           <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-blue-600 shadow-2xl group-hover:scale-110 transition">

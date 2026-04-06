@@ -1,37 +1,42 @@
 import Image from "next/image";
 import Container from "../ui/Container";
 import { PromoBadge } from "../ui/PromoBadge";
+import { H1 } from "../ui/Typography";
 
 export function ProblemSection() {
-    const promoText = (
-      <>
-        <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
-        <span className="pl-2  text-gray-300 font-thin ">
-          Are Distractions Holding You Back?
-        </span>
-      </>
-    );
+  const promoText = (
+    <>
+      <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+      <span className="pl-2  text-gray-300 font-thin ">
+        Are Distractions Holding You Back?
+      </span>
+    </>
+  );
 
-    const problemText2 = (
-      <>
-        <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
-        <span className="pl-2  text-gray-300 font-thin ">
-         No Worries
-        </span>
-      </>
-    );
+  const problemText2 = (
+    <>
+      <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
+      <span className="pl-2  text-gray-300 font-thin ">No Worries</span>
+    </>
+  );
 
   return (
     <section className="py-24 bg-black text-center">
       <Container>
-        <PromoBadge>{promoText}</PromoBadge>
-        <h2 className="text-3xl md:text-4xl font-medium leading-tight text-white mb-10 max-w-4xl mx-auto mt-10">
-          If you struggle to focus, feel overwhelmed <br /> by end
-          <span className="text-gray-600">
-            less tasks, or procrastinate instead <br /> of making progress,
-            you're not alone.
-          </span>
-        </h2>
+        <div className="mt-6">
+          <PromoBadge>{promoText}</PromoBadge>
+        </div>
+        <div className="py-16">
+          <H1>
+            If you struggle to focus, feel overwhelmed
+            <br className="hidden md:block" /> by end
+            <span className="text-gray-600">
+              less tasks, or procrastinate instead
+              <br className="hidden md:block" /> of making progress, you're not
+              alone.
+            </span>
+          </H1>
+        </div>
 
         <div className="flex justify-center space-x-4">
           {[1, 2, 3].map((i) => (
@@ -89,11 +94,11 @@ export function ProblemSection() {
                   deeply is the ultimate <br className="hidden md:block" />
                   productivity hack.
                 </p>
-                <h2 className="text-2xl md:text-4xl font-medium text-white leading-tight">
+                <h1 className="text-2xl md:text-4xl font-normal text-white leading-tight">
                   And fortunately it's <br className="hidden md:block" /> a
                   skill you can train <br className="hidden md:block" /> &
                   develop.
-                </h2>
+                </h1>
               </div>
 
               <div className="relative md:absolute md:bottom-10 md:right-10 flex flex-row md:flex-col gap-3 h-auto">

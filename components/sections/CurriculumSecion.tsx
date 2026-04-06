@@ -50,10 +50,10 @@ export function CurriculumSection() {
       <Container>
         <div className="flex flex-col items-center text-center mb-16">
           <PromoBadge>Course Curriculum</PromoBadge>
-          <h2 className="text-2xl md:text-5xl f text-white my-12 tracking-tight">
+          <h1 className="text-2xl md:text-5xl font-normal tracking-tight leading-tight py-16">
             Mastering Deep Work: A Structured <br className="hidden md:block" />
             Path To Peek productivity
-          </h2>
+          </h1>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-28">
@@ -148,7 +148,14 @@ export function CurriculumSection() {
                     key={item}
                     className="flex items-center gap-3 text-sm text-gray-400"
                   >
-                    <CheckCircle2 className="text-blue-500 w-4 h-4 shrink-0" />{" "}
+                    <Image
+                      src="/assets/done-icon.png"
+                      alt="Check"
+                      width={60}
+                      height={60}
+                      className="shrink-0 dark:invert-0 invert"
+                      priority
+                    />
                     {item}
                   </li>
                 ))}
