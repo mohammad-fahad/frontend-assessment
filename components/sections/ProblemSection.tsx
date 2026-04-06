@@ -50,15 +50,15 @@ export function ProblemSection() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[0.4fr_0.6fr] gap-2 p-3 md:p-6 rounded-[40px] items-stretch mt-20">
-          <div className="relative hidden md:flex aspect-auto lg:aspect-auto min-h-[80vh] rounded-[32px] overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.4fr_0.6fr] gap-2 p-3 md:p-6 rounded-[40px] items-stretch mt-20 ">
+          <div className="relative hidden lg:flex aspect-auto lg:aspect-auto min-h-[80vh] rounded-[32px] overflow-hidden ">
             <Image
               src="/assets/problem-image.png"
               alt="Man working on laptop"
-              fill
-              sizes="100%"
-              className="object-top object-cover shadow-lg"
-              priority
+              width={800}
+              height={600}
+              className="object-top object-cover  "
+              loading="lazy"
             />
           </div>
 
@@ -71,7 +71,7 @@ export function ProblemSection() {
                   {[1, 2, 3].map((i) => (
                     <div
                       key={i}
-                      className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#0B0F17] overflow-hidden bg-zinc-800"
+                      className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#0B0F17] overflow-hidden bg-zinc-800 hover:scale-110 transition-transform cursor-pointer"
                     >
                       <Image
                         src={`/assets/small-avatar${i}.png`}
@@ -90,7 +90,7 @@ export function ProblemSection() {
               </div>
             </div>
 
-            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-end min-h-[400px] md:h-[36vh] w-full">
+            <div className="relative grid grid-cols-1 md:grid-cols-2 gap-8 items-center min-h-[400px] md:h-[46vh] w-full">
               <div className="max-w-md text-start">
                 <p className="text-lg md:text-xl text-zinc-400 mb-6 md:mb-12 leading-relaxed font-light">
                   The ability to concentrate <br className="hidden md:block" />
@@ -108,14 +108,14 @@ export function ProblemSection() {
                 {[1, 2, 3].map((i) => (
                   <div
                     key={i}
-                    className="w-16 h-20 md:w-20 md:h-24 rounded-2xl overflow-hidden border border-white/10 cursor-pointer hover:border-blue-500 transition-colors"
+                    className="w-16 h-20 md:w-30 md:h-40 rounded-2xl overflow-hidden border border-white/10 cursor-pointer hover:scale-105 transition-transform"
                   >
                     <Image
                       src={`/assets/problem-right${i}.png`}
                       alt="preview"
                       className="w-full h-full object-cover"
-                      width={80}
-                      height={100}
+                      width={100}
+                      height={150}
                       loading="lazy"
                     />
                   </div>

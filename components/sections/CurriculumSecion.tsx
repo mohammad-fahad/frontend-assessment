@@ -2,11 +2,13 @@
 
 import Container from "../ui/Container";
 import { PromoBadge } from "../ui/PromoBadge";
-import  Button  from "../ui/Button";
-import { ChevronDown, PlayCircle, FileText, CheckCircle2, ChevronUp } from "lucide-react";
+import Button from "../ui/Button";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 export function CurriculumSection() {
+  const [hilightedModule, setHilightedModule] = useState<number | null>(0);
   const modules = [
     {
       id: 1,
@@ -19,9 +21,7 @@ export function CurriculumSection() {
           preview: true,
         },
         { title: "The Science Behind Deep Work", duration: "22:51" },
-
         { title: "Identifying Your Productivity Killers", duration: "34:42" },
-
         { title: "How to Strengthen Your Attention Span", duration: "27:08" },
       ],
     },
@@ -50,72 +50,68 @@ export function CurriculumSection() {
       <Container>
         <div className="flex flex-col items-center text-center mb-16">
           <PromoBadge>Course Curriculum</PromoBadge>
-          <h1 className="text-2xl md:text-5xl font-normal tracking-tight leading-tight py-16">
+          <h1 className="text-2xl md:text-5xl font-normal tracking-tight leading-tight py-16 text-white">
             Mastering Deep Work: A Structured <br className="hidden md:block" />
             Path To Peek productivity
           </h1>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-28">
-          <div className="lg:col-span-2 space-y-3">
-            {modules.map((m) => (
-              <div key={m.id} className=" rounded-[24px] overflow-hidden ">
-                <div className="flex justify-between items-center p-6 cursor-pointer">
-                  <div className="flex items-center gap-4">
-                    <div>
-                      <h3 className="text-white font-medium text-lg">
-                        Module {m.id} {m.title}
-                      </h3>
-                      <small className="text-gray-400 font-thin">
-                        {m.subtitle}
-                      </small>
-                    </div>
+        {/* Responsive Grid Fix */}
+        <div className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-3 gap-8 my-16">
+          {/* Left Column: Curriculum (Spans 2 cols on mobile, 1 on md, 2 on lg) */}
+          <div className="col-span-2 md:col-span-1 lg:col-span-2 space-y-3">
+            {modules.map((m, i) => (
+              <div key={m.id} className="rounded-[24px] overflow-hidden">
+                <div className="flex justify-between items-center p-6 cursor-pointer group">
+                  <div>
+                    <h3 className="text-white font-medium text-lg">
+                      Module {m.id}: {m.title}
+                    </h3>
+                    <small className="text-gray-400 font-thin">
+                      {m.subtitle}
+                    </small>
                   </div>
-
-                  {m.id !== 1 ? (
-                    <ChevronDown className="text-white/40 w-5 h-5 " />
+                  {m.id === 1 ? (
+                    <ChevronUp className="text-white/40 w-5 h-5" />
                   ) : (
-                    <ChevronUp className="text-white/40 w-5 h-5 " />
+                    <ChevronDown className="text-white/40 w-5 h-5" />
                   )}
                 </div>
 
-                {m.id !== 1 && (
-                  <div className="h-[1px] w-full mb-5  bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
-                )}
-
+                {/* Lesson List with Perfect Borders */}
                 {m.id === 1 && (
-                  <div className="px-6 pb-6 space-y-3 ">
-                    {m.lessons.map((lesson, i) => (
-                      <div key={i}>
-                        <div className="h-[1px] w-full mb-5  bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
+                  <div className="px-6 pb-6 space-y-2">
+                    {m.lessons.map((lesson, idx) => (
+                      <div key={idx}>
+                        <div className="h-[1px] w-full mb-2 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
                         <div
-                          className={`flex items-center justify-between p-4 rounded-xl transition-all  `}
+                          className="flex items-center justify-between p-4 rounded-xl transition-all cursor-pointer"
+                          onMouseEnter={() => setHilightedModule(idx)}
+                          onMouseLeave={() => setHilightedModule(null)}
                         >
-                          <div className="flex items-center gap-3 ">
+                          <div className="flex items-center gap-3">
                             <Image
-                              className={`w-6 h-6 text-blue-500 items-stretch ${i === 0 ? "opacity-100" : "opacity-30"}`}
-                              priority
+                              className={`w-6 h-6 transition-all duration-300 ${hilightedModule === idx || (hilightedModule === null && idx === 0) ? "opacity-100 scale-110" : "opacity-30"}`}
                               src="/assets/Play-Button.png"
-                              alt="play button"
-                              height={10}
-                              width={10}
+                              alt="play"
+                              height={24}
+                              width={24}
                             />
-
                             <span
-                              className={`text-sm ${lesson.preview ? "text-gray-200" : "text-gray-400"}`}
+                              className={`text-md transition-colors ${lesson.preview || hilightedModule === idx ? "text-gray-200" : "text-gray-500"}`}
                             >
                               {lesson.title}
                             </span>
                           </div>
-
                           <div className="flex items-center gap-4">
                             {lesson.preview && (
-                              <span className="text-[10px] uppercase font-bold text-blue-400 border border-blue-500/40 px-2 py-0.5 rounded-full">
+                              <span className="text-[10px] uppercase font-bold text-blue-400 border border-blue-500/30 px-2 py-0.5 rounded-full">
                                 Preview
                               </span>
                             )}
-
-                            <span className="text-xs text-gray-500 font-mono">
+                            <span
+                              className={`text-md font-mono ${lesson.preview || hilightedModule === idx ? "text-gray-200" : "text-gray-500"}`}
+                            >
                               {lesson.duration}
                             </span>
                           </div>
@@ -124,15 +120,16 @@ export function CurriculumSection() {
                     ))}
                   </div>
                 )}
-                {m.id === 1 && (
-                  <div className="h-[1px] w-full mb-5  bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
+
+                {/* Bottom Divider Fix: Only between modules, not after last */}
+                {i !== modules.length - 1 && (
+                  <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
                 )}
               </div>
             ))}
           </div>
 
-          {/* Right: Pricing Card */}
-          <div className=" h-fit ">
+          <div className="col-span-2 md:col-span-1 lg:col-span-1 h-fit">
             <div className="bg-[#0B0F17] border border-white/10 p-8 rounded-[32px] shadow-2xl relative overflow-hidden">
               <h4 className="text-white font-medium text-xl mb-6">
                 Not only video lessons!
@@ -146,21 +143,19 @@ export function CurriculumSection() {
                 ].map((item) => (
                   <li
                     key={item}
-                    className="flex items-center gap-3 text-sm text-gray-400"
+                    className="flex items-center gap-3 text-md text-gray-400"
                   >
                     <Image
                       src="/assets/done-icon.png"
                       alt="Check"
-                      width={60}
-                      height={60}
-                      className="shrink-0 dark:invert-0 invert"
-                      priority
+                      width={24}
+                      height={24}
+                      className="shrink-0 invert opacity-80"
                     />
                     {item}
                   </li>
                 ))}
               </ul>
-
               <Button
                 variant="primary"
                 className="w-full py-4 text-base font-semibold shadow-[0_10px_30px_rgba(37,99,235,0.3)]"

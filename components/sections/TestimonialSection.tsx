@@ -98,9 +98,6 @@ export default function TestimonialSection() {
             </button>
           </div>
         </div>
-
-        {/* 2. The Carousel with the "Bleed-to-Right" Effect */}
-        {/* Negative margin on the right allows cards to go off-page */}
         <div className="-mr-[100vw]">
           <div className="overflow-visible" ref={emblaRef}>
             <div className="flex gap-6">

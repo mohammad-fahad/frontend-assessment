@@ -84,7 +84,60 @@
   background-clip: padding-box, border-box;
 }
 
+.premium-gradient-border {
+  position: relative;
+  border-radius: 32px;
+  background: #0d121d; 
+  background-clip: padding-box;
+  border: 1px solid transparent;
+}
 
+.premium-gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px; 
+  z-index: -1;
+  border-radius: 32px;
+  background: radial-gradient(
+    circle at top left,
+    rgba(59, 130, 246, 0.6) 0%,
+    transparent 40%
+  ),
+  radial-gradient(
+    circle at bottom right,
+    rgba(59, 130, 246, 0.4) 0%,
+    transparent 40%
+  );
+  
+  pointer-events: none;
+}
+
+.card-border-glow {
+  background: #0d121d; /* কার্ডের মেইন ব্যাকগ্রাউন্ড */
+  position: relative;
+  border-radius: 32px;
+}
+
+.card-border-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px; 
+  border-radius: 32px;
+  padding: 1px; 
+  background: linear-gradient(
+    135deg, 
+    rgba(59, 130, 246, 0.5) 0%, 
+    rgba(59, 130, 246, 0.05) 40%, 
+    rgba(59, 130, 246, 0.05) 60%, 
+    rgba(59, 130, 246, 0.4) 100%
+  );
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
 
 
 

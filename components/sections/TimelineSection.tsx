@@ -87,7 +87,7 @@ export function TimelineSection() {
                       width={120}
                       height={120}
                       loading="lazy"
-                      className="opacity-90group-hover:opacity-100 transition-opacity dark:invert-0 invert group-hover:invert-0"
+                      className="object-contain object-center group-hover:scale-110 transition-transform duration-400 hover:animate-ping"
                     />
                   </div>
                 </div>
