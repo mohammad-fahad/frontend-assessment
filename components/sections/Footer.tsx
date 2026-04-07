@@ -1,5 +1,6 @@
 import { ArrowRight } from "lucide-react";
 import Container from "../ui/Container";
+import Card from "../ui/Card";
 
 export function Footer() {
   return (
@@ -17,7 +18,7 @@ export function Footer() {
           </div>
 
           {/* Blue CTA Card */}
-          <div className="relative bg-blue-600 w-full md:w-[320px] aspect-[1.8/1] md:aspect-auto md:h-[180px] p-8 rounded-[32px] flex flex-col justify-between group cursor-pointer hover:bg-blue-700 transition-all overflow-hidden">
+          <Card className="relative bg-blue-600 w-full md:w-[320px] aspect-[1.8/1] md:aspect-auto md:h-[180px] p-8 rounded-[32px] flex flex-col justify-between group cursor-pointer hover:bg-blue-700 transition-all overflow-hidden">
             {/* Top Row: Avatars and Arrow Button */}
             <div className="flex items-center justify-between w-full -mt-2">
               {/* Avatars Stacked */}
@@ -48,7 +49,7 @@ export function Footer() {
                 Join with 5Kother students
               </p>
             </div>
-          </div>
+          </Card>
         </div>
         <div className="relative top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-500 to-transparent z-10" />
         {/* Bottom Links */}

@@ -14,7 +14,10 @@ export default function Hero() {
     </span>
   );
   return (
-    <section className="hero-pro-container min-h-screen flex flex-col items-center justify-start py-20 md:py-28  overflow-hidden opacity-100">
+    <section
+      className="hero-pro-container min-h-screen flex flex-col items-center justify-center py-20 md:py-26 overflow-hidden"
+      id="hero"
+    >
       <Container>
         <div className="hero-glow-mesh" />
         <div className="hero-top-fade" />

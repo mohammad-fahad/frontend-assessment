@@ -6,6 +6,7 @@ import Button from "../ui/Button";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import Card from "../ui/Card";
 
 export function CurriculumSection() {
   const [hilightedModule, setHilightedModule] = useState<number | null>(0);
@@ -46,7 +47,7 @@ export function CurriculumSection() {
   ];
 
   return (
-    <section className="py-16 bg-black">
+    <section className="py-26 bg-black" id="curriculum">
       <Container>
         <div className="flex flex-col items-center text-center mb-16">
           <PromoBadge>Course Curriculum</PromoBadge>
@@ -58,7 +59,6 @@ export function CurriculumSection() {
 
         {/* Responsive Grid Fix */}
         <div className="grid grid-cols-2 md:grid-cols-1 lg:grid-cols-3 gap-8 my-16">
-          {/* Left Column: Curriculum (Spans 2 cols on mobile, 1 on md, 2 on lg) */}
           <div className="col-span-2 md:col-span-1 lg:col-span-2 space-y-3">
             {modules.map((m, i) => (
               <div key={m.id} className="rounded-[24px] overflow-hidden">
@@ -135,7 +135,7 @@ export function CurriculumSection() {
           </div>
 
           <div className="col-span-2 md:col-span-1 lg:col-span-1 h-fit">
-            <div className="bg-[#0B0F17] border border-white/10 p-8 rounded-[32px] shadow-2xl relative overflow-hidden">
+            <Card className="bg-[#0B0F17] border border-white/10 p-8 rounded-[32px] shadow-2xl relative overflow-hidden">
               <h4 className="text-white font-medium text-xl mb-6">
                 Not only video lessons!
               </h4>
@@ -168,7 +168,7 @@ export function CurriculumSection() {
               >
                 Enroll Now
               </Button>
-            </div>
+            </Card>
           </div>
         </div>
       </Container>

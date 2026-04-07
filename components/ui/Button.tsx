@@ -16,7 +16,7 @@ export default function Button({
   return (
     <button
       className={cn(
-        "px-4 py-3 rounded-xl transition-all active:scale-95 disabled:opacity-50 cursor-pointer text-xs md:text-base font-medium",
+        "px-4 py-3 rounded-xl transition-all active:scale-95 disabled:opacity-50 cursor-pointer text-xs md:text-base font-medium hover:scale-105",
         variant === "primary"
           ? "bg-blue-600 text-white hover:shadow-[rgba(36, 102, 242, 1)]"
           : "",

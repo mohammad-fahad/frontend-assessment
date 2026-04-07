@@ -43,7 +43,7 @@ const steps = [
 
 export function TimelineSection() {
   return (
-    <section className="py-16 bg-black">
+    <section className="py-16 bg-black" id="overview">
       <Container>
         <div className="text-center mb-32">
           <div className="py-16">

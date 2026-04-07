@@ -21,7 +21,7 @@ export function ProblemSection() {
   );
 
   return (
-    <section className="py-16 bg-black text-center">
+    <section className="py-26 bg-black text-center">
       <Container>
         <div className="mt-6">
           <PromoBadge>{promoText}</PromoBadge>

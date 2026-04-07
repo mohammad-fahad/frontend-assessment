@@ -3,13 +3,68 @@ import Image from "next/image";
 import Container from "../ui/Container";
 import Button from "../ui/Button";
 import ThemeToggle from "../ui/ThemeToggle";
+import { useEffect, useState } from "react";
+
+const navLinks = [
+  { name: "Overview", href: "#overview" },
+  { name: "Curriculum", href: "#curriculum" },
+  { name: "Testimonials", href: "#testimonials" },
+  { name: "Pricing", href: "#pricing" },
+];
 
 export default function Navbar() {
+  const [activeTab, setActiveTab] = useState<string | null>(null);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.id;
+          const matchedLink = navLinks.find((link) => link.href === `#${id}`);
+          if (matchedLink) {
+            setActiveTab(matchedLink.name);
+          }
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      observerCallback,
+      observerOptions,
+    );
+
+    navLinks.forEach((link) => {
+      const sectionId = link.href.replace("#", "");
+      const element = document.getElementById(sectionId);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    name: string,
+  ) => {
+    e.preventDefault();
+    setActiveTab(name);
+  };
+
   return (
     <header className="sticky top-0 z-50 w-full py-4 border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-black/80 backdrop-blur-md">
       <Container>
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <a
+            href="#hero"
+            className="flex items-center gap-2"
+            onClick={() => setActiveTab("hero")}
+          >
             <Image
               src="/assets/Logo.png"
               alt="logo"
@@ -18,33 +73,31 @@ export default function Navbar() {
               className="dark:invert-0 invert"
               priority
             />
-          </div>
+          </a>
 
           <nav className="hidden md:flex items-center gap-3 lg:gap-8 text-xs md:text-sm font-medium text-gray-600 dark:text-gray-400">
-            <a
-              href="#"
-              className="hover:text-black dark:hover:text-white transition-colors"
-            >
-              Overview
-            </a>
-            <a
-              href="#"
-              className="hover:text-black dark:hover:text-white transition-colors"
-            >
-              Curriculum
-            </a>
-            <a
-              href="#"
-              className="hover:text-black dark:hover:text-white transition-colors"
-            >
-              Testimonials
-            </a>
-            <a
-              href="#"
-              className="hover:text-black dark:hover:text-white transition-colors"
-            >
-              Pricing
-            </a>
+            {navLinks.map((link) => {
+              const isActive = activeTab === link.name;
+
+              return (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setActiveTab(link.name)}
+                  className={`relative pb-1 transition-colors duration-300 hover:text-black dark:hover:text-white
+              ${isActive ? "text-black dark:text-white" : ""}
+            `}
+                >
+                  {link.name}
+
+                  <span
+                    className={`absolute bottom-0 left-0 h-[2px] bg-blue-500 transition-all duration-300
+                ${isActive ? "w-full opacity-100" : "w-0 opacity-0"}
+              `}
+                  />
+                </a>
+              );
+            })}
           </nav>
 
           <div className="flex items-center gap-3 text-center">

@@ -3,6 +3,7 @@ import Container from "../ui/Container";
 import Button from "../ui/Button";
 import Image from "next/image";
 import { PromoBadge } from "../ui/PromoBadge";
+import Card from "../ui/Card";
 
 export function PricingSection() {
   const bonusItems = [
@@ -16,11 +17,11 @@ export function PricingSection() {
     },
   ];
   return (
-    <section className="py-16 bg-black">
+    <section className="py-26 bg-black" id="pricing">
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-[1.5fr_1fr] gap-8 items-stretch">
           {/* Left Card: Course Blueprint */}
-          <div className="bg-[#0B0F17] p-8 md:p-12 rounded-[32px] border border-white/5 flex flex-col justify-center">
+          <Card className="bg-[#0B0F17] p-8 md:p-12 rounded-[32px] border border-white/5 flex flex-col justify-center">
             <div className="my-8">
               <PromoBadge> Introducing</PromoBadge>
             </div>
@@ -50,10 +51,10 @@ export function PricingSection() {
                 </li>
               ))}
             </ul>
-          </div>
+          </Card>
 
           {/* Right Card: Pricing with Gradient Border */}
-          <div className="card-border-glow group h-full">
+          <Card className="card-border-glow group h-full">
             <div className="bg-[#0D121D] p-8 md:p-10 rounded-[31px] h-full flex flex-col relative z-10">
               <div className="flex justify-between items-start mb-4">
                 <div className="flex items-baseline gap-3">
@@ -110,7 +111,7 @@ export function PricingSection() {
                 Enroll now
               </Button>
             </div>
-          </div>
+          </Card>
         </div>
       </Container>
     </section>
