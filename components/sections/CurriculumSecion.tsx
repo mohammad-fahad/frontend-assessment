@@ -135,11 +135,11 @@ export function CurriculumSection() {
           </div>
 
           <div className="col-span-2 md:col-span-1 lg:col-span-1 h-fit">
-            <Card className="bg-[#0B0F17] border border-white/10 p-8 rounded-[32px] shadow-2xl relative overflow-hidden">
+            <Card className="bg-[#0B0F17] border border-white/10 p-6 md:p-8 rounded-[32px] shadow-2xl relative overflow-hidden">
               <h4 className="text-white font-medium text-xl mb-6">
                 Not only video lessons!
               </h4>
-              <ul className="space-y-4 mb-8">
+              <ul className="space-y-4 mb-8 -ms-4 md:ms-0">
                 {[
                   "6h of videos - Step-by-step deep work strategies.",
                   "Templates & Trackers – Stay on track effortlessly.",

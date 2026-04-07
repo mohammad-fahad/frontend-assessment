@@ -10,7 +10,7 @@ export default function Card({
   return (
     <div
       className={cn(
-        "bg-card rounded-2xl p-6 border border-white/10",
+        "bg-card rounded-2xl p-2 md:p-6 lg:p-10 border border-white/10",
         "hover:border-primary/40 hover:scale-[1.03]",
         "transition-all duration-300 group hover:rotate-[0.5deg]",
         className as string | any,

@@ -87,7 +87,7 @@ export default function TestimonialSection() {
       className="bg-black text-white py-24 overflow-hidden"
       id="testimonials"
     >
-      <div className="max-w-[1460px] mx-auto px-6 md:px-12 lg:px-16">
+      <div className="max-w-full md:max-w-365 lg:max-w-[80vw] mx-auto px-6 md:px-12 lg:px-16">
         <div className="text-center mb-12">
           <PromoBadge>Testimonials</PromoBadge>
           <h1 className="text-3xl md:text-5xl font-normal tracking-tight leading-tight mt-10">
