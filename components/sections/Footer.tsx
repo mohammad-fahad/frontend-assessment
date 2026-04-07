@@ -54,10 +54,7 @@ export function Footer() {
         <div className="relative top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-500 to-transparent z-10" />
         {/* Bottom Links */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 gap-6">
-          <p className="text-gray-600 text-[11px]">
-            © Copyright 2024, All Rights Reserved
-          </p>
-          <div className="flex gap-6 text-[11px] text-gray-500">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-[11px] text-gray-500">
             <a href="#" className="hover:text-white transition-colors">
               Term & conditions
             </a>
@@ -71,6 +68,9 @@ export function Footer() {
               Support
             </a>
           </div>
+          <p className="text-gray-600 order-2 md:order-1 text-[11px]">
+            © Copyright 2024, All Rights Reserved
+          </p>
         </div>
       </Container>
     </footer>
