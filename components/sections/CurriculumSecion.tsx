@@ -104,19 +104,19 @@ export function CurriculumSection() {
                               width={24}
                             />
                             <span
-                              className={`text-md transition-colors ${lesson.preview || hilightedModule === idx ? "text-gray-200" : "text-gray-500"}`}
+                              className={`text-xs md:text-md  transition-colors ${lesson.preview || hilightedModule === idx ? "text-gray-200" : "text-gray-500"}`}
                             >
                               {lesson.title}
                             </span>
                           </div>
                           <div className="flex items-center gap-4">
                             {lesson.preview && (
-                              <span className="text-[10px] uppercase font-bold text-blue-400 border border-blue-500/60 px-2 py-0.5 rounded-full">
+                              <span className="text-[8px] md:text-xm lg:text-md  uppercase font-bold text-blue-400 border border-blue-500/60 px-2 py-0.5 sm:mt-0 sm:ms-0 ms-2 mt-8 rounded-full">
                                 Preview
                               </span>
                             )}
                             <span
-                              className={`text-md font-mono ${lesson.preview || hilightedModule === idx ? "text-gray-200" : "text-gray-500"}`}
+                              className={`text-xs md:text-md font-mono ${lesson.preview || hilightedModule === idx ? "text-gray-200" : "text-gray-500"}`}
                             >
                               {lesson.duration}
                             </span>

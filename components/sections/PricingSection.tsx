@@ -57,11 +57,11 @@ export function PricingSection() {
             <div className="bg-[#0D121D] p-8 md:p-10 rounded-[31px] h-full flex flex-col relative z-10">
               <div className="flex justify-between items-start mb-4">
                 <div className="flex items-baseline gap-3">
-                  <span className="text-white text-3xl md:text-5xl font-normal">
+                  <span className="text-white text-2xl md:text-5xl font-normal">
                     $349
                   </span>
                   <span
-                    className="relative text-gray-600 text-2xl font-medium ml-2 
+                    className="relative text-gray-600 text-xl md:text-3xl font-medium md:ml-2 
           after:content-[''] after:absolute after:left-[-10%] after:right-[-10%] 
           after:top-1/2 after:h-[2px] after:bg-red-500 after:rotate-[-170deg] 
           after:rounded-full"
@@ -69,7 +69,7 @@ export function PricingSection() {
                     $500
                   </span>
                 </div>
-                <span className="bg-blue-600 text-sm font-normal text-white px-3 py-1 rounded-md uppercase">
+                <span className="bg-blue-600 text-xs md:text-sm font-normal text-white px-3 py-1 rounded-md uppercase">
                   30% off
                 </span>
               </div>

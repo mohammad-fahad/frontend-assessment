@@ -20,7 +20,7 @@ export default function Navbar() {
             />
           </div>
 
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
+          <nav className="hidden md:flex items-center gap-3 lg:gap-8 text-xs md:text-sm font-medium text-gray-600 dark:text-gray-400">
             <a
               href="#"
               className="hover:text-black dark:hover:text-white transition-colors"
@@ -47,10 +47,13 @@ export default function Navbar() {
             </a>
           </nav>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 text-center">
             <ThemeToggle />
 
-            <Button variant="primary" className="hidden md:flex">
+            <Button
+              variant="primary"
+              className="hidden md:flex px-4 py-2 m-0 rounded-lg text-sm font-medium"
+            >
               Enroll now
             </Button>
 

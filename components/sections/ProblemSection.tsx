@@ -108,7 +108,7 @@ export function ProblemSection() {
                 {[1, 2, 3].map((i) => (
                   <div
                     key={i}
-                    className="w-16 h-20 md:w-30 md:h-40 rounded-2xl overflow-hidden border border-white/10 cursor-pointer hover:scale-105 transition-transform"
+                    className="w-16 h-20 md:w-22 md:h-30 rounded-2xl overflow-hidden border border-white/10 cursor-pointer hover:scale-105 transition-transform"
                   >
                     <Image
                       src={`/assets/problem-right${i}.png`}

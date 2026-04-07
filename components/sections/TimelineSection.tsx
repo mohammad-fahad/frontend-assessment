@@ -52,7 +52,8 @@ export function TimelineSection() {
             </PromoBadge>
           </div>
           <h1 className="text-2xl md:text-5xl py-16 font-normal text-white">
-            A self-paced, results-driven <br /> course designed to help you
+            A self-paced, results-driven <br className="hidden lg:flex" />
+            course designed to help you
           </h1>
         </div>
 
