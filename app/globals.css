@@ -114,7 +114,7 @@
 }
 
 .card-border-glow {
-  background: #0d121d; /* কার্ডের মেইন ব্যাকগ্রাউন্ড */
+  background: #0d121d; 
   position: relative;
   border-radius: 32px;
 }
