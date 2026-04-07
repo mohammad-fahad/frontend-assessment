@@ -38,7 +38,7 @@ export function PricingSection() {
                   className="flex items-center gap-1 text-gray-400 dark:text-gray-400 text-md"
                 >
                   <Image
-                    src={"/assets/white-Plus.png"}
+                    src={"/assets/white-plus.png"}
                     alt="Plus"
                     width={80}
                     height={80}
