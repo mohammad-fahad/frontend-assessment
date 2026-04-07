@@ -44,7 +44,7 @@ export default function Hero() {
           </FadeUp>
 
           <FadeUp delay={0.4}>
-            <div className="flex justify-center items-center mx-auto gap-6 py-8 md:py-10">
+            <div className="flex justify-center items-center mx-auto gap-2 md:gap-6 py-8 md:py-10">
               <Button>Enroll now</Button>
 
               <Button variant="dark" className="border-white/10">
