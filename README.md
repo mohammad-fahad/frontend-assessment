@@ -1,101 +1,137 @@
-# Frontend Assessment – Mohammad Fahad
-
-## 🚀 Live Demo
+Frontend Assessment – Mohammad Fahad
+🚀 Live Demo
 
 https://frontend-assessment-ruby.vercel.app/
 
----
+🛠 Tech Stack
+Next.js (App Router)
+TypeScript
+Tailwind CSS
+Framer Motion
+Vercel (Deployment)
+🎯 Objective
 
-## 🛠 Tech Stack
+The goal of this assessment was to implement a production-quality landing page from a Figma design, ensuring:
 
-* Next.js (App Router)
-* TypeScript
-* Tailwind CSS
-* Framer Motion (for animations)
-* Vercel (deployment)
+Visual accuracy
+Responsive behavior
+Clean and scalable architecture
+Maintainable and reusable components
+🧠 Approach & Thought Process
+1. Component-Driven Architecture
 
----
+I structured the project into:
 
-## ✨ Features
+UI components → reusable building blocks (Button, Card, Container)
+Section components → page-level composition (Hero, Features, etc.)
 
-* Pixel-perfect UI implementation from Figma design
-* Fully responsive across mobile, tablet, and desktop
-* Reusable and scalable component architecture
-* Optimized performance using Next.js features
-* Clean and maintainable code structure
-* Interactive UI with smooth animations
-* Semantic HTML and accessibility-focused structure
+This separation ensures:
 
----
+Reusability
+Scalability
+Clear responsibility boundaries
+2. Layout & Spacing System
 
-## 📁 Project Structure
+Instead of arbitrary spacing, I followed a consistent spacing scale:
 
-```
+Section spacing → py-20 md:py-28
+Internal spacing → mt-6, mt-8, mt-12
+Grid gaps → gap-6 md:gap-8
+
+This improves:
+
+Visual consistency
+Maintainability
+Faster iteration
+3. Responsive Strategy
+
+Used a mobile-first approach:
+
+Base styles for mobile
+Progressive enhancement with md, lg breakpoints
+Flexible layouts using flex and grid
+
+Tested across:
+
+Mobile
+Tablet
+Desktop
+4. Design Fidelity Decisions
+
+Since the Figma file was view-only (no exact values), I focused on:
+
+Matching visual proportions instead of exact pixels
+Maintaining typography hierarchy
+Ensuring consistent spacing rhythm
+
+Trade-off:
+
+Prioritized visual accuracy over pixel-perfect exactness due to limited inspect access.
+
+5. Hero Section Implementation
+
+The hero section was treated as the primary conversion area:
+
+Strong typography hierarchy
+Clear CTA emphasis
+Breakout layout for media (video/image wider than text container)
+
+This improves:
+
+Visual impact
+User attention flow
+6. Reusability & Abstraction
+
+Created reusable components:
+
+Container → layout consistency
+Section → spacing standardization
+Card → reused across multiple sections
+FadeUp → animation wrapper
+
+Benefit:
+
+Reduces duplication
+Improves scalability
+7. Animations & UX
+
+Used Framer Motion for subtle animations:
+
+Fade + upward motion on scroll
+Hover interactions on cards and buttons
+
+Goal:
+
+Enhance UX without harming performance
+8. Performance Considerations
+Used optimized image handling
+Avoided unnecessary re-renders
+Kept animation lightweight
+⚖️ Trade-offs & Decisions
+Decision	Reason
+Tailwind CSS	Faster iteration and consistency
+Component abstraction	Improves scalability
+View-based Figma matching	No inspect access
+Lightweight animations	Balance UX and performance
+📁 Project Structure
 /app
 /components
-  /ui        → reusable UI components (Button, Container, etc.)
-  /sections  → page sections (Hero, Features, Pricing, etc.)
-/lib         → utility functions
-/public      → static assets (images, icons)
-/styles      → global styles
-```
-
----
-
-## 🧠 Approach
-
-This project was built with a focus on **production-level frontend practices**:
-
-* Followed a **component-driven architecture** for scalability and reusability
-* Maintained a **clean separation between UI components and sections**
-* Used **mobile-first responsive design principles**
-* Extracted reusable patterns for consistency across the UI
-* Focused on **pixel accuracy, spacing consistency, and typography hierarchy**
-* Applied subtle animations to enhance user experience without impacting performance
-
----
-
-## ⚡ Performance & Optimization
-
-* Used `next/image` for optimized image loading
-* Implemented lazy loading for non-critical sections
-* Ensured minimal layout shifts and fast rendering
-* Clean Tailwind usage to avoid unnecessary CSS bloat
-
----
-
-## 📱 Responsiveness
-
-The application is fully responsive and tested on:
-
-* Mobile (≤ 375px)
-* Tablet (768px)
-* Desktop (1024px+)
-* Large screens
-
----
-
-## 🎯 Key Highlights
-
-* Attention to detail in spacing, layout, and alignment
-* Consistent design system usage
-* Clean and readable codebase
-* Real-world frontend architecture approach
-
----
-
-## 📦 Setup & Run Locally
-
-```bash
+  /ui        → reusable components
+  /sections  → page sections
+/lib         → utilities
+/public      → assets
+✨ Key Highlights
+Clean and scalable architecture
+Strong attention to spacing and layout consistency
+Reusable component system
+Responsive and accessible UI
+Subtle animations for enhanced UX
+📦 Run Locally
 git clone https://github.com/mohammad-fahad/frontend-assessment.git
 cd frontend-assessment
 npm install
 npm run dev
-```
-
----
-
-## 👨‍💻 Author
+👨‍💻 Author
 
 **Mohammad Fahad**
 Frontend Developer
