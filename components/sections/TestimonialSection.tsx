@@ -61,17 +61,22 @@ export default function TestimonialSection() {
     dragFree: true,
   });
 
-  // Fixed: Logic for selected index tracking
-  const onSelect = useCallback((api: UseEmblaCarouselType | undefined) => {
+  const onSelect = useCallback((api: any) => {
     if (!api) return;
     setSelectedIndex(api.selectedScrollSnap());
   }, []);
 
   useEffect(() => {
     if (!emblaApi) return;
+
     onSelect(emblaApi);
-    emblaApi.on("select", () => onSelect(emblaApi));
-    emblaApi.on("reInit", () => onSelect(emblaApi));
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
   }, [emblaApi, onSelect]);
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
@@ -111,21 +116,20 @@ export default function TestimonialSection() {
           </div>
         </div>
 
-        {/* Fixed Viewport Structure */}
-        <div className="overflow-visible " ref={emblaRef}>
-          <div className="flex  gap-6 md:gap-8 lg:gap-12">
+        <div className="overflow-visible" ref={emblaRef}>
+          <div className="flex gap-6 md:gap-8 lg:gap-12">
             {testimonials.map((item, index) => {
               const isActive = index === selectedIndex;
               return (
                 <div
                   key={item.id}
-                  className="flex-[0_0_85%] md:flex-[0_0_420px] min-w-0 transition-all duration-500 "
+                  className="flex-[0_0_85%] md:flex-[0_0_420px] min-w-0 transition-all duration-500"
                 >
                   <div
-                    className={`relative h-[500px] md:h-[580px] rounded-[40px] bg-[#111111] border border-white/5 p-10 flex-col justify-between group overflow-hidden transition-all flex gap-6 duration-500 
-                    ${isActive ? "opacity-100 scale-105" : "opacity-60 scale-95"} `}
+                    className={`relative h-[500px] md:h-[580px] rounded-[40px] bg-[#111111] border border-white/5 p-10 flex flex-col justify-between group overflow-hidden transition-all duration-500 
+                    ${isActive ? "opacity-100 scale-105" : "opacity-60 scale-95"}`}
                   >
-                    <div className="relative z-20 ">
+                    <div className="relative z-20">
                       {item.avatar && (
                         <Image
                           src={item.avatar}
@@ -150,7 +154,6 @@ export default function TestimonialSection() {
                           alt="Thumbnail"
                           width={420}
                           height={580}
-                          loading="lazy"
                         />
                         <div className="absolute inset-0 flex items-center justify-center z-30">
                           <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-blue-600 shadow-2xl group-hover:scale-110 transition">
